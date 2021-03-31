@@ -29,3 +29,23 @@ const numbers = [3, 7, 4, 5, 10];
 //const evenNumbers =
 // The below line should console.log: [4, 10]
 //console.log(evenNumbers);
+
+// solution
+const pets = ["goldfish", "dog", "turtle", "tiger"];
+
+//1 Filter out only the pets that have 5 or less letters in their name.
+const petsShortNames = pets.filter((p) => p.length <= 5);
+console.log(petsShortNames);
+
+//2 Filter out only the pets whose names start with the letter 't'.
+const petsTNames = pets.filter((p) => p[0] === "t");
+console.log(petsTNames);
+
+const numbers = [3, 7, 4, 5, 10];
+//3 Filter out only the numbers that are greater than 4.
+const numbersBiggerThanFour = numbers.filter((n) => n > 4);
+console.log(numbersBiggerThanFour);
+
+//4 Filter out only the even numbers. Research the use of the modulo operator, %.
+const evenNumbers = numbers.filter((n) => n % 2 === 0);
+console.log(evenNumbers);
