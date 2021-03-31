@@ -1,0 +1,57 @@
+// filter
+let filterArr = [1, 1, 1, 2, 2, 2];
+let evenArr = [];
+for (let i = 0; i < filterArr.length; i++) {
+  if (filterArr[i] % 2 === 0) {
+    evenArr.push(filterArr[i]);
+  }
+}
+
+console.log(evenArr);
+
+let evenArr2 = filterArr.filter((number, index) => {
+  console.log(`current Index: ${index} number: ${number}`);
+  return number % 2 === 0;
+});
+
+let evenArr3 = filterArr.filter((number, index) => number % 2 === 0);
+
+console.log(evenArr3);
+
+// map
+let mapArr = [1, 1, 1, 2, 2, 2];
+let doubleArr = [];
+for (let i = 0; i < mapArr.length; i++) {
+  doubleArr.push(mapArr[i] * 2);
+}
+
+let mapArr2 = mapArr.map((number, index) => {
+  return number * 2;
+});
+
+//   console.log(doubleArr);
+console.log(mapArr2);
+
+// reduce
+let reduceArr = [1, 1, 1, 2, 2, 2];
+let sum = 0;
+for (let i = 0; i < reduceArr.length; i++) {
+  sum += reduceArr[i];
+}
+
+console.log(sum);
+
+let sum2 = reduceArr.reduce((accum, curr, index) => {
+  console.log(`Index = ${index} \naccum = ${accum} \ncurr = ${curr}`);
+  return accum + curr;
+}, 10);
+
+console.log(sum2);
+//   console.log(reduceArr);
+
+// array method that mutates original array?
+reduceArr.reverse();
+console.log(reduceArr);
+
+// retrospective
+// anything that can be improved?
