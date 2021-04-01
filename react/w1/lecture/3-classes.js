@@ -115,3 +115,5 @@ let vehicle2 = new Vehicle();
 // vehicle2.getType();
 let bike = new Motorcycle();
 // bike.getType();
+
+// together create steps for making a class with a constructor, one property, and one method that prints the property

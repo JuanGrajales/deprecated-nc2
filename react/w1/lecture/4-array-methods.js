@@ -53,5 +53,15 @@ let sum2 = reduceArr.reduce((accum, curr, index) => {
 reduceArr.reverse();
 // console.log(reduceArr);
 
+// how to check if there is a duplicate name in an array?
+let names = [
+  { name: "Juan", age: "26" },
+  { name: "Jaime", age: "28" },
+  { name: "Roy", age: "26" },
+  { name: "Jess", age: "26" },
+  { name: "Anwar", age: "26" },
+  { name: "Jonathan", age: "25" },
+];
+
 // retrospective
 // anything that can be improved?
