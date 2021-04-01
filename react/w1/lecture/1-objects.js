@@ -1,27 +1,16 @@
-// Slack - join onea-2021-01-07-react and 3-react channels
-// GitHub - https://github.com/JuanGrajales/nc/tree/main/react/feb-2021
+// Slack channels - join onea-2021-02-02-react and 3-react
 // Slide Deck will be sent through Slack at the beginning of every workshop
 // Stand Up - beginning of every workshop
 
 // data types: String, Number, Boolean, Undefined, Null, Symbol, BigInt, Object
 
 // Object syntax
-// step 1: choose keyword (const, let, var)
-// step 2: create the object name (use camelCase)
-// step 3: use assignment operator (=)
-// step 4: open up curly braces {}
-// step 5: add as many key/value pairs as you want, each key/value will be separated by a comma
 const obj = {
   message: "hello",
   msg2: "bonjour",
 };
 
-// key/value pair syntax
-// keyName : value
-// value can be any data type (i.e. String, Number, Boolean, Undefined, Null, Symbol, BigInt, Object)
-
 // methods vs functions
-
 const obj2 = {
   message: "hello",
   msg2: "bonjour",
@@ -64,21 +53,8 @@ const bicycle = {
   },
 };
 
-//   console.log(bicycle);
-console.log(bicycle.color);
-console.log(bicycle.electric);
-console.log(bicycle.start);
-console.log(bicycle.start());
+// console.log(bicycle);
 
 // how do you change the color of the bike?
-// how to change the value of a property?
-// step 1: use dot notation (objName.propertyName) to specify the property you want to change
-// step 2: use the assignment operator (=)
-// step 3: specify the new value
-
-bicycle.color = "red";
 
 // how do you change the start method?
-bicycle.start = function () {
-  console.log(`new method value`);
-};

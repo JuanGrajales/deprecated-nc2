@@ -13,7 +13,7 @@ class ClassName {
   }
 }
 
-let v1 = new ClassName("test");
+let objFromClass = new ClassName("test");
 
 // monopoly
 let player1 = {
@@ -68,23 +68,20 @@ let p1 = new Player("Wen", 100000, []);
 let p2 = new Player("Fred", 100000, []);
 let p3 = new Player("John", 100000, []);
 let p4 = new Player("Brian", 100000, []);
-console.log(p1);
-
-//   console.log(v1.property1);
 
 // method chaining (split, reverse, join)
 // reverse a string
 let str = "nauJ";
-//   let str2 = str[3]+str[2]+str[1]+str[0]
-console.log(str.split(""));
+let str2 = str[3] + str[2] + str[1] + str[0];
+// console.log(str2);
+
 let revArr = [1, 2, 3, 4];
-console.log(revArr.reverse());
-console.log(revArr.join(""));
-let revStr = str.split("").reverse().join("");
-console.log(revStr);
+// console.log(revArr.reverse());
+// console.log(revArr.join(""));
+
 let strAsArr = str.split("");
 let strArrRev = strAsArr.reverse();
-let revStr2 = strArrRev.join("");
+let revStr = strArrRev.join("");
 
 // OOP: APIE
 // Abstraction
@@ -115,6 +112,6 @@ class Motorcycle extends Vehicle {
 }
 
 let vehicle2 = new Vehicle();
-vehicle2.getType();
+// vehicle2.getType();
 let bike = new Motorcycle();
-bike.getType();
+// bike.getType();

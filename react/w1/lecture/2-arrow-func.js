@@ -1,19 +1,17 @@
 // turn this into an arrow function
 // superpower: hoisting
-hi();
 
 function hi() {
   return "Hello";
 }
+// hi();
 
 const hiArrow = () => {
   return "Hello";
 };
-
-hiArrow();
+// hiArrow();
 
 // arrow function with explicit return
-
 function hi2(name) {
   return { message: name };
 }
@@ -23,7 +21,6 @@ const hi2Arrow = () => {
 };
 
 // arrow function without explicit return
-
 function hi3(name) {
   return "hello";
 }
