@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <h1>Task 3</h1>
+  </body>
+  <script>
+    class Student {
+      constructor(name, email, community) {
+        this.name = name;
+        this.email = email;
+        this.community = community;
+      }
+    }
+
+    class Bootcamp {
+      constructor(name, level, students = []) {
+        this.name = name;
+        this.level = level;
+        this.students = students; // []
+      }
+
+      registerStudent(studentToRegister) {
+        console.log("method is executed ", studentToRegister);
+        let duplicates = this.students.filter((eachExistingStudent) => {
+          console.log(eachExistingStudent);
+          if (eachExistingStudent.email === studentToRegister.email) {
+            console.log("This is a duplicate");
+            return eachExistingStudent;
+          }
+        });
+        console.log(duplicates);
+        console.log(duplicates.length);
+        if (duplicates.length > 0) {
+          console.log("this email is already used");
+        } else {
+          this.students.push(studentToRegister);
+        }
+      }
+
+      registerStudent2(studentToRegister) {
+        let duplicates = this.students.filter((eachExistingStudent) => {
+          return eachExistingStudent.email === studentToRegister.email;
+        });
+
+        if (duplicates.length > 0) {
+          console.log("this email is already used");
+        } else {
+          this.students.push(studentToRegister);
+        }
+      }
+
+      registerStudent3(studentToRegister) {
+        let duplicates = this.students.filter(
+          (eachExistingStudent) =>
+            eachExistingStudent.email === studentToRegister.email
+        );
+
+        if (duplicates.length > 0) {
+          console.log("this email is already used");
+        } else {
+          this.students.push(studentToRegister);
+        }
+      }
+
+      registerStudent4(studentToRegister) {
+        if (
+          this.students.filter(
+            (eachExistingStudent) =>
+              eachExistingStudent.email === studentToRegister.email
+          ).length > 0
+        ) {
+          console.log("this email is already used");
+        } else {
+          this.students.push(studentToRegister);
+        }
+      }
+
+      registerStudent5(studentToRegister) {
+        if (
+          this.students.filter(
+            (eachExistingStudent) =>
+              eachExistingStudent.email === studentToRegister.email
+          ).length === 0
+        ) {
+          this.students.push(studentToRegister);
+        } else {
+          console.log("this email is already used");
+        }
+      }
+
+      registerStudent5(studentToRegister) {
+        let addStudent = false;
+        const duplicates = this.students.filter((student) => {
+          if (studentToRegister.email === student.email) {
+            addStudent = false;
+          } else {
+            addStudent = true;
+          }
+        });
+
+        if (addStudent === true) {
+          this.students.push(studentToRegister);
+        }
+      }
+    }
+
+    let s1 = new Student("Katherine", "k@k.com", "Kittens for Cats");
+    let s2 = new Student("Shade", "dark@shade.com", "Umbrellas for Shade");
+    let s3 = new Student("Sean", "s@s.com", "Looking for zoom room");
+
+    let arrStudents = [s1, s2, s3];
+
+    let b1 = new Bootcamp("react", "hard", arrStudents);
+    console.log(b1);
+
+    let newStudent = new Student(
+      "Ariel",
+      "a@a.com",
+      "Looking for land human to marry"
+    );
+
+    b1.registerStudent5(newStudent);
+
+    console.log(b1.students);
+  </script>
+</html>
