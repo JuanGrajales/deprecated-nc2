@@ -2,14 +2,14 @@
 // superpower: hoisting
 
 function hi() {
-  return "Hello";
+  console.log("function declaration");
 }
-// hi();
+hi();
 
 const hiArrow = () => {
-  return "Hello";
+  console.log("arrow function");
 };
-// hiArrow();
+hiArrow();
 
 // arrow function with explicit return
 function hi2(name) {
@@ -33,4 +33,4 @@ function hi4(name) {
   return "hello";
 }
 
-const hi4Arrow = (name) => "hello";
+// const hi4Arrow = name => "hello";

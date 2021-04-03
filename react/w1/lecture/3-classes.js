@@ -17,7 +17,7 @@ let objFromClass = new ClassName("test");
 
 // monopoly
 let player1 = {
-  name: "Wen",
+  name: "Michael",
   money: "100000",
   houses: [],
   roll() {
@@ -26,7 +26,7 @@ let player1 = {
 };
 
 let player2 = {
-  name: "John",
+  name: "Kristen",
   money: "100000",
   houses: [],
   roll() {
@@ -35,7 +35,7 @@ let player2 = {
 };
 
 let player3 = {
-  name: "Fred",
+  name: "Katherine",
   money: "100000",
   houses: [],
   roll() {
@@ -44,7 +44,7 @@ let player3 = {
 };
 
 let player4 = {
-  name: "Brian",
+  name: "Serena",
   money: "100000",
   houses: [],
   roll() {
@@ -62,26 +62,21 @@ class Player {
   roll() {
     console.log(`Rolling dice`);
   }
+
+  balance() {
+    console.log(`${this.name} has ${this.money} amount of money left.`);
+  }
 }
 
-let p1 = new Player("Wen", 100000, []);
-let p2 = new Player("Fred", 100000, []);
-let p3 = new Player("John", 100000, []);
-let p4 = new Player("Brian", 100000, []);
+let p1 = new Player("Michael", 100000, []);
+let p2 = new Player("Katherine", 100000, []);
+let p3 = new Player("Serena", 100000, []);
+let p4 = new Player("Kristen", 100000, []);
 
-// method chaining (split, reverse, join)
-// reverse a string
-let str = "nauJ";
-let str2 = str[3] + str[2] + str[1] + str[0];
-// console.log(str2);
+console.log(p1);
 
-let revArr = [1, 2, 3, 4];
-// console.log(revArr.reverse());
-// console.log(revArr.join(""));
-
-let strAsArr = str.split("");
-let strArrRev = strAsArr.reverse();
-let revStr = strArrRev.join("");
+p1.balance();
+p2.balance();
 
 // OOP: APIE
 // Abstraction
@@ -93,6 +88,7 @@ let revStr = strArrRev.join("");
 class Vehicle {
   constructor(type = "Car") {
     this.type = type;
+    this.motorTypeCapacity = "2.4L";
   }
 
   getType() {
@@ -112,8 +108,26 @@ class Motorcycle extends Vehicle {
 }
 
 let vehicle2 = new Vehicle();
-// vehicle2.getType();
+vehicle2.getType();
 let bike = new Motorcycle();
-// bike.getType();
+bike.getType();
+
+// method chaining (split, reverse, join)
+// reverse a string
+let str = "nauJ";
+let str2 = str[3] + str[2] + str[1] + str[0];
+console.log(str2);
+
+let revArr = [1, 2, 3, 4];
+console.log(revArr.reverse());
+console.log(revArr.join(""));
+
+let strAsArr = str.split(""); // ["n", "a", "u", "J"]
+let strArrRev = strAsArr.reverse(); // [ 'J', 'u', 'a', 'n' ]
+let revStr = strArrRev.join(""); //"Juan"
+// console.log(revStr);
+
+let strReverse = str.split("").reverse().join("");
+console.log(strReverse);
 
 // together create steps for making a class with a constructor, one property, and one method that prints the property
