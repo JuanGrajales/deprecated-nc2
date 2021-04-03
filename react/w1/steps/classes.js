@@ -32,3 +32,5 @@ class ExampleClass2 {
     console.log(`${this.property1}`);
   }
 }
+
+let obj = new ExampleClass2();
