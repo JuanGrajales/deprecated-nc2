@@ -10,7 +10,7 @@ for (let i = 0; i < filterArr.length; i++) {
 // console.log(evenArr);
 
 let evenArr2 = filterArr.filter((number, index) => {
-  console.log(`current Index: ${index} number: ${number}`);
+  // console.log(`current Index: ${index} number: ${number}`);
   return number % 2 === 0;
 });
 
@@ -25,7 +25,7 @@ for (let i = 0; i < mapArr.length; i++) {
   doubleArr.push(mapArr[i] * 2);
 }
 
-let doubleArr2 = mapArr.map((number, index) => {
+let doubleArr2 = mapArr.map((number) => {
   return number * 2;
 });
 
@@ -42,11 +42,11 @@ for (let i = 0; i < reduceArr.length; i++) {
 // console.log(sum);
 
 let sum2 = reduceArr.reduce((accum, curr, index) => {
-  console.log(`Index = ${index} \naccum = ${accum} \ncurr = ${curr}`);
+  // console.log(`Index = ${index} accum = ${accum} curr = ${curr}`);
   return accum + curr;
-}, 10);
+}, 0);
 
-// console.log(sum2);
+console.log(sum2);
 // console.log(reduceArr);
 
 // array method that mutates original array?
@@ -63,5 +63,6 @@ let names = [
   { name: "Jonathan", age: "25" },
 ];
 
-// retrospective
-// anything that can be improved?
+// how can we create a class using the steps?
+
+// Everyone must install prettier extension
