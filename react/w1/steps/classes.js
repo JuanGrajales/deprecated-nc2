@@ -1,29 +1,32 @@
 // How to create a class
 // step 1: use keyword class
-// step 2: write class name using PascalCase
-// step 3: use {}
-// step 4: use constructor keyword
-// step 5: ()
-// step 6: inside the () write your parameters seperated by comma
-// step 7: {}
-// step 8: each property assign it the value of the corresponding parameter by using this.propertyName = parameter
+// step 2: write class name using PascalCase (every first letter of a word should start with a capital letter)
+// step 3: add {}
+class ExampleClass {}
 
-class ExampleClass {
-  constructor(param1) {
+// How to create a constructor
+// step 1: inside of the {} use constructor keyword
+// step 2: add ()
+// step 3: inside of the () write your parameters seperated by comma
+// step 4: add {}
+// step 5: each property shoudl be assigned to the value of the corresponding parameter by using this syntax: this.propertyName = paramName
+
+class ExampleClass2 {
+  constructor(param1, param2) {
     this.property1 = param1;
+    this.property2 = param2;
   }
 }
 
 // How to add a method to a class that calls a property of the class
-// step 1: outside the {} of the constructor but instide the {} of the class
-// step 2: methodName using camelCase
-// step 3: ()
-// step 4: {}
-// step 5: whatever code you want to execute inside the method (e.g. console.log())
-// step 6: call a property of a class by doing this.propertyName
-// step 7(optional): add parameters to your method
+// step 1: outside the {} of the constructor but instide the {} of the class write the methodName using camelCase
+// step 2: add ()
+// step 3: add {}
+// step 4: add whatever code you want to execute inside the method (e.g. console.log())
+// step 5: call a property of a class by using the following syntax: this.propertyName
+// step 6(optional): add parameters to your method inside the ()
 
-class ExampleClass2 {
+class ExampleClass3 {
   constructor(param1) {
     this.property1 = param1;
   }
@@ -33,4 +36,4 @@ class ExampleClass2 {
   }
 }
 
-let obj = new ExampleClass2();
+let obj = new ExampleClass3();

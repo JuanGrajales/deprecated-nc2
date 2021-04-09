@@ -42,7 +42,7 @@ for (let i = 0; i < reduceArr.length; i++) {
 console.log(sum);
 
 let sum2 = reduceArr.reduce((accum, curr, index) => {
-  console.log(`Index = ${index} accum = ${accum} curr = ${curr}`);
+  // console.log(`Index = ${index} accum = ${accum} curr = ${curr}`);
   return accum + curr;
 }, 0);
 
@@ -63,8 +63,6 @@ let names = [
   { name: "Jonathan", age: "25" },
 ];
 
-// together create steps for making a class with a constructor, one property, and one method that prints the property
-// Everyone must install prettier extension
+// how can we create a class using the steps?
 
-// retrospective
-// anything that can be improved?
+// Everyone must install prettier extension

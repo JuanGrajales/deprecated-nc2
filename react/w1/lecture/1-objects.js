@@ -29,11 +29,11 @@ function foo() {
 }
 
 // calling a function
-foo();
+// foo();
 
 // calling a method
 // objectName.methodName()
-obj2.method1();
+// obj2.method1();
 
 // when would you use an object instead of a regular variable or vice versa?
 const player = {
