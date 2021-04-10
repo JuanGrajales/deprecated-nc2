@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 
 class Comp1 extends Component {
-  //   constructor(props) {
-  // super(props);
-  state = {
-    user: "Juan",
-    color: "red",
-  };
-  //   }
-
   render() {
     return (
       <div>
         <h3>Comp1</h3>
         <p>
-          User: {this.state.user} color: {this.state.color}
+          User: {this.props.user} color: {this.props.color}
         </p>
+        <p>Prop: {this.props.prop1}</p>
       </div>
     );
   }
