@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+// step 2 NEW
 import CampsiteInfo from "./CampsiteInfoComponent";
+// step 2 NEW
 import {
   Card,
   CardImg,
