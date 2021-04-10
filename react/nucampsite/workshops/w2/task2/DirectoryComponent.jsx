@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import CampsiteInfo from "./CampsiteInfoComponent";
-// step 3 REMOVE
+// step 3 EDIT
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
-// step 3 REMOVE
+// step 3 EDIT
 
 class Directory extends Component {
   constructor(props) {
