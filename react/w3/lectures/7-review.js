@@ -11,7 +11,7 @@
 // step 2: after the equal give it a value (e.g. "string", 11, object, array)
 
 // How to use the prop in the component you passed it to?
-// step 1: {this.props.nameOfProp}
+// step 1: class components prop syntax {this.props.nameOfProp}, fucntional components prop syntax {props.nameOfProp}
 
 // How to display an array using map
 
