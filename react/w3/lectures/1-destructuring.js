@@ -14,7 +14,7 @@ let obj = {
 // let { age } = obj;
 // let { stack } = obj;
 
-// let { fname, age, stack } = obj;
+let { fname, age, stack } = obj;
 // console.log(fname, age, stack);
 
 // destructuring params of functions
@@ -31,4 +31,32 @@ function func2({ fname, age, stack }) {
   console.log("property 3: " + stack);
 }
 
-// func2(obj);
+func2(obj);
+
+// functional component
+import React from "react";
+
+function Destructuring({ fname, age }) {
+  return <div>{fname} </div>;
+}
+
+export default Destructuring;
+
+import React, { Component } from "react";
+
+class App extends Component {
+  state = {
+    fname: "John",
+    age: 21,
+    stack: "MERN",
+  };
+  render() {
+    return (
+      <div>
+        <Destructuring stateProp={this.state} />
+      </div>
+    );
+  }
+}
+
+export default App;

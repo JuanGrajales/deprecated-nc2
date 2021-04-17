@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Test from "./components/Test";
 import Test2 from "./components/Test2";
+import Page1 from "./components/Page1";
 
 class App extends Component {
   render() {
@@ -16,13 +17,15 @@ class App extends Component {
             <li>
               <Link to="/test/2">Why exact path2?</Link>
             </li>
+            <li>
+              <Link to="/juan">Page 1</Link>
+            </li>
           </ul>
-          <h2>
-            Switch will choose the route that has the path matching the url
-          </h2>
+          <p>Switch will choose the route that has the path matching the url</p>
           <Switch>
-            <Route path="/test" render={() => <Test />} />
-            <Route path="/test/2" render={() => <Test2 />} />
+            {/* <Route exact path="/juan" render={() => <Page1 />} /> */}
+            <Route exact path="/test" render={() => <Test />} />
+            <Route exact path="/test/2" render={() => <Test2 />} />
             <Route
               path="/router-props"
               render={(props) => <Test {...props} />}
