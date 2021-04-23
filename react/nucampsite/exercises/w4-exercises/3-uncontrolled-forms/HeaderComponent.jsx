@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+// step 1 EDIT ADD
 import {
-  Nav,
   Navbar,
   NavbarBrand,
+  Nav,
   NavbarToggler,
   Collapse,
   NavItem,
@@ -16,26 +17,35 @@ import {
   Input,
   Label,
 } from "reactstrap";
+// step 1 EDIT ADD
 import { NavLink } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
     super(props);
 
+    this.toggleNav = this.toggleNav.bind(this);
     this.state = {
       isNavOpen: false,
+      // step 2 ADD
       isModalOpen: false,
+      // step 2 ADD
     };
 
+    // step 3 ADD
     this.toggleNav = this.toggleNav.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    // step 3 ADD
   }
 
-  toggleNav() {
-    this.setState({
-      isNavOpen: !this.state.isNavOpen,
-    });
+  // step 4 ADD
+  handleLogin(event) {
+    alert(
+      `Username: ${this.username.value} Password: ${this.password.value} Remember: ${this.remember.checked}`
+    );
+    this.toggleModal();
+    event.preventDefault();
   }
 
   toggleModal() {
@@ -43,13 +53,12 @@ class Header extends Component {
       isModalOpen: !this.state.isModalOpen,
     });
   }
+  // step 4 ADD
 
-  handleLogin(event) {
-    alert(
-      `Username: ${this.username.value} Password: ${this.password.value} Remember: ${this.remember.checked}`
-    );
-    this.toggleModal();
-    event.preventDefault();
+  toggleNav() {
+    this.setState({
+      isNavOpen: !this.state.isNavOpen,
+    });
   }
 
   render() {
@@ -100,18 +109,22 @@ class Header extends Component {
                   </NavLink>
                 </NavItem>
               </Nav>
+              {/* // step 6 ADD */}
               <span className="navbar-text ml-auto">
                 <Button outline onClick={this.toggleModal}>
                   <i className="fa fa-sign-in fa-lg" /> Login
                 </Button>
               </span>
+              {/* // step 6 ADD */}
             </Collapse>
           </div>
         </Navbar>
 
+        {/* // step 5 ADD */}
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>
+            {/* // step 7 ADD */}
             <Form onSubmit={this.handleLogin}>
               <FormGroup>
                 <Label htmlFor="username">Username</Label>
@@ -145,8 +158,10 @@ class Header extends Component {
                 Login
               </Button>
             </Form>
+            {/* // step 7 ADD */}
           </ModalBody>
         </Modal>
+        {/* // step 5 ADD */}
       </React.Fragment>
     );
   }

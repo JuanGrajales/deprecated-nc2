@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// step 1 EDIT REMOVE
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,15 +8,11 @@ import {
   Col,
   Row,
 } from "reactstrap";
+// step 1 EDIT REMOVE
 import { Link } from "react-router-dom";
-import { Control, LocalForm, Errors } from "react-redux-form";
-
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !val || val.length <= len;
-const minLength = (len) => (val) => val && val.length >= len;
-const isNumber = (val) => !isNaN(+val);
-const validEmail = (val) =>
-  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+// step 2 ADD
+import { Control, LocalForm } from "react-redux-form";
+// step 2 ADD
 
 class Contact extends Component {
   constructor(props) {
@@ -36,16 +33,89 @@ class Contact extends Component {
         email: false,
       },
     };
-
+    // step 6 REMOVE
+    // this.handleInputChange = this.handleInputChange.bind(this);
+    // step 6 REMOVE
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // step 3 ADD
   handleSubmit(values) {
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current state is: " + JSON.stringify(values));
   }
+  // step 3 ADD
+
+  // step 5 REMOVE
+  // validate(firstName, lastName, phoneNum, email) {
+  //   const errors = {
+  //     firstName: "",
+  //     lastName: "",
+  //     phoneNum: "",
+  //     email: "",
+  //   };
+
+  //   if (this.state.touched.firstName) {
+  //     if (firstName.length < 2) {
+  //       errors.firstName = "First name must be at least 2 characters.";
+  //     } else if (firstName.length > 15) {
+  //       errors.firstName = "First name must be 15 or less characters.";
+  //     }
+  //   }
+
+  //   if (this.state.touched.lastName) {
+  //     if (lastName.length < 2) {
+  //       errors.lastName = "Last name must be at least 2 characters.";
+  //     } else if (lastName.length > 15) {
+  //       errors.lastName = "Last name must be 15 or less characters.";
+  //     }
+  //   }
+
+  //   const reg = /^\d+$/;
+  //   if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
+  //     errors.phoneNum = "The phone number should contain only numbers.";
+  //   }
+
+  //   if (this.state.touched.email && !email.includes("@")) {
+  //     errors.email = "Email should contain a @";
+  //   }
+
+  //   return errors;
+  // }
+
+  // handleBlur = (field) => () => {
+  //   this.setState({
+  //     touched: { ...this.state.touched, [field]: true },
+  //   });
+  // };
+
+  // handleInputChange(event) {
+  //   const target = event.target;
+  //   const name = target.name;
+  //   const value = target.type === "checkbox" ? target.checked : target.value;
+
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // }
+
+  // handleSubmit(event) {
+  //   console.log("Current state is: " + JSON.stringify(this.state));
+  //   alert("Current state is: " + JSON.stringify(this.state));
+  //   event.preventDefault();
+  // }
+  // step 5 REMOVE
 
   render() {
+    // step 7 REMOVE
+    // const errors = this.validate(
+    //   this.state.firstName,
+    //   this.state.lastName,
+    //   this.state.phoneNum,
+    //   this.state.email
+    // );
+    // step 7 REMOVE
+
     return (
       <div className="container">
         <div className="row">
@@ -93,6 +163,7 @@ class Contact extends Component {
             <hr />
           </div>
           <div className="col-md-10">
+            {/* // step 4 EDIT */}
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <Row className="form-group">
                 <Label htmlFor="firstName" md={2}>
@@ -105,22 +176,6 @@ class Contact extends Component {
                     name="firstName"
                     placeholder="First Name"
                     className="form-control"
-                    validators={{
-                      required,
-                      minLength: minLength(2),
-                      maxLength: maxLength(15),
-                    }}
-                  />
-                  <Errors
-                    className="text-danger"
-                    model=".firstName"
-                    show="touched"
-                    component="div"
-                    messages={{
-                      required: "Required",
-                      minLength: "Must be at least 2 characters",
-                      maxLength: "Must be 15 characters or less",
-                    }}
                   />
                 </Col>
               </Row>
@@ -135,22 +190,6 @@ class Contact extends Component {
                     name="lastName"
                     placeholder="Last Name"
                     className="form-control"
-                    validators={{
-                      required,
-                      minLength: minLength(2),
-                      maxLength: maxLength(15),
-                    }}
-                  />
-                  <Errors
-                    className="text-danger"
-                    model=".lastName"
-                    show="touched"
-                    component="div"
-                    messages={{
-                      required: "Required",
-                      minLength: "Must be at least 2 characters",
-                      maxLength: "Must be 15 characters or less",
-                    }}
                   />
                 </Col>
               </Row>
@@ -165,24 +204,6 @@ class Contact extends Component {
                     name="phoneNum"
                     placeholder="Phone number"
                     className="form-control"
-                    validators={{
-                      required,
-                      minLength: minLength(10),
-                      maxLength: maxLength(15),
-                      isNumber,
-                    }}
-                  />
-                  <Errors
-                    className="text-danger"
-                    model=".phoneNum"
-                    show="touched"
-                    component="div"
-                    messages={{
-                      required: "Required",
-                      minLength: "Must be at least 10 numbers",
-                      maxLength: "Must be 15 numbers or less",
-                      isNumber: "Must be a number",
-                    }}
                   />
                 </Col>
               </Row>
@@ -197,20 +218,6 @@ class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     className="form-control"
-                    validators={{
-                      required,
-                      validEmail,
-                    }}
-                  />
-                  <Errors
-                    className="text-danger"
-                    model=".email"
-                    show="touched"
-                    component="div"
-                    messages={{
-                      required: "Required",
-                      validEmail: "Invalid email address",
-                    }}
                   />
                 </Col>
               </Row>
@@ -260,6 +267,7 @@ class Contact extends Component {
                 </Col>
               </Row>
             </LocalForm>
+            {/* // step 4 EDIT */}
           </div>
         </div>
       </div>
