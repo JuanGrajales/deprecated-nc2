@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <h1>Redux</h1>
       <p>Counter from redfux store {counter}</p>
-      <button onClick={() => dispatch(increment())}>+</button>
+      <button onClick={() => dispatch(increment(5))}>+</button>
       <button onClick={() => dispatch(decrement())}>-</button>
 
       <p>Welcome {isLogged ? "Juan" : ""}</p>

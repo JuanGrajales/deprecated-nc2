@@ -9,28 +9,28 @@ const ValidationForm = () => {
   return (
     <div>
       <LocalForm onSubmit={(values) => handleSubmit(values)}>
-        <div>
-          <label htmlFor="matchIdForInput">Email</label>
-          <Control.text
-            model=".email"
-            id="matchIdForInput"
-            placeholder="email"
-            validators={{
-              required: (val) => val?.length > 0,
-              minLength: (val) => val?.length > 2,
-            }}
-          />
-          <Errors
-            className="text-danger"
-            model=".email"
-            show="touched"
-            component="div"
-            messages={{
-              required: "Required",
-              minLength: "Must be at least 2 characters",
-            }}
-          />
-        </div>
+        {/* <div> */}
+        {/* <label htmlFor="matchIdForInput">Email</label> */}
+        <Control.text
+          model=".email"
+          // id="matchIdForInput"
+          // placeholder="email"
+          validators={{
+            required: (val) => val?.length > 0,
+            minLength: (val) => val?.length > 2,
+          }}
+        />
+        <Errors
+          // className="text-danger"
+          model=".email"
+          show="touched"
+          component="div"
+          messages={{
+            required: "Required",
+            minLength: "Must be at least 2 characters",
+          }}
+        />
+        {/* </div> */}
         <button type="submit">Submit</button>
       </LocalForm>
     </div>

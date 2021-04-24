@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 // REDUX LECTURE
 import { createStore } from "redux";
 // action
+// action is just an object with a property called type that has a string describing the action
+// anytime you create an action you will have to create a correspending case in the switch statement of the reducer
 const increment = () => {
   return {
     type: "INCREMENT",
@@ -20,13 +22,21 @@ const decrement = () => {
   };
 };
 
+const decrement5 = () => {
+  return {
+    type: "DECREMENT5",
+  };
+};
+
 // reducer
 const counter = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
       return state + 1;
     case "DECREMENT":
-      return state + 1;
+      return state - 1;
+    case "DECREMENT5":
+      return state - 5;
     default:
       return state;
   }

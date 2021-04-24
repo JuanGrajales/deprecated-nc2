@@ -9,14 +9,11 @@ const SimpleForm = () => {
   return (
     <div>
       <LocalForm onSubmit={(values) => handleSubmit(values)}>
-        <div>
-          <label htmlFor="matchIdForInput">Username</label>
-          <Control.text
-            model=".username"
-            id="matchIdForInput"
-            placeholder="username"
-          />
-        </div>
+        <Control.text model=".username" />
+        {/* <Control.number model=".number" /> */}
+        <Control.text model=".email" />
+        <Control.text model=".password" />
+
         <button type="submit">Submit</button>
       </LocalForm>
     </div>

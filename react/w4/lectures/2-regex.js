@@ -10,17 +10,17 @@ console.log(str.replace("b", "a")); // this prints "aye"
 // regex syntax: /pattern/optionalFlags
 
 let str1 = "bbbbbbbye";
-// console.log(str1.replace("b", "a")); // this prints "abbbbbbye"
+console.log(str1.replace("b", "a")); // this prints "abbbbbbye"
 
 // basic example
 let regex = /b/g;
 let str2 = "bbbbbbbye";
-// console.log(str2.replace(regex, "a")); // this still prints "aaaaaaaye"
+console.log(str2.replace(regex, "a")); // this still prints "aaaaaaaye"
 
 // global flag example
 let regex2 = /[ebyc]/gi;
 let str3 = "BBbBbBbye";
-// console.log(str3.replace(regex2, "a")); // this still prints "aaaaaaaaa"
+console.log(str3.replace(regex2, "a")); // this still prints "aaaaaaaaa"
 
 // resources
 // https://www.w3schools.com/js/js_regexp.asp

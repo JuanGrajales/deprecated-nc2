@@ -6,7 +6,7 @@ let obj = {
   obj2: {
     num2: 11,
     func2: function () {
-      console.log("func2 ", this.num);
+      console.log("func2 ", this.num, this.num2);
     },
   },
   func3: function () {
@@ -35,8 +35,8 @@ let obj = {
 // dot notation
 // console.log(obj.num);
 
-// obj.func();
-// obj.obj2.func2();
+obj.func();
+obj.obj2.func2();
 
 // after binding
 const func2Bind = obj.obj2.func2.bind(obj);
@@ -46,3 +46,18 @@ const func2Bind = obj.obj2.func2.bind(obj);
 // obj.func3();
 // obj.func4();
 // obj.func5();
+
+import React from "react";
+
+const ComponentName = (props) => {
+  userClicked = () => {
+    console.log("user clicked");
+  };
+  return (
+    <React.Fragment>
+      <button onClick={userClicked}>Click here</button>
+    </React.Fragment>
+  );
+};
+
+export default ComponentName;

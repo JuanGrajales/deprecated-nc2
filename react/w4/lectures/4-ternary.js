@@ -26,6 +26,8 @@ if (age >= 21) {
 // the parenthesis are not necessary, for me this is added by prettier
 age >= 21 ? (price = 100) : (price = 50);
 
+isUserLoggedIn ? "display use sensitive data" : "don't display anything";
+
 // console.log(price);
 
 // import React from "react";

@@ -11,7 +11,7 @@ export const increment = (num = 1) => {
 
 export const decrement = () => {
   return {
-    type: "SIGN_IN",
+    type: "DECREMENT",
   };
 };
 

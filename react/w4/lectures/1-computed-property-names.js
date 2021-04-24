@@ -5,13 +5,16 @@ let obj = {
 };
 
 // do you add a property to the object?
-obj.prop2 = "value 2";
-// console.log(obj);
+obj.email = "value 2";
+console.log(obj);
 
+{
+  /* <input type="text" />; */
+}
 // you can also add a property using a variable
-let str = "prop3";
-obj[str] = "value 3";
-// console.log(obj);
+let userInput = "prop3";
+obj[userInput] = "value 3";
+console.log(obj);
 
 let account = {
   username: "",
@@ -29,4 +32,4 @@ arr2.forEach((inventory) => {
   objFromArr[inventory[0]] = inventory[1];
 });
 
-// console.log(objFromArr);
+console.log(objFromArr);
