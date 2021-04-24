@@ -32,7 +32,7 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: true,
+      isModalOpen: false,
     };
   }
 
