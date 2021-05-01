@@ -1,13 +1,13 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 
 // action types
-export const INCREMENT = "INCREMENT";
+export const INCREMENT = "INCREMENT1";
 
 // actions
 // every action you create must have a corresponding case in the switch statement of a reducer
 export const increment = (num = 1) => {
   return {
-    type: "INCREMENT",
+    type: INCREMENT,
     payload: num,
   };
 };
@@ -29,7 +29,7 @@ export const counterReducer = (state = 0, action) => {
   console.log("counterReducer state: ", state);
   console.log("counterReducer action object: ", action);
   switch (action.type) {
-    case "INCREMENT":
+    case INCREMENT:
       return state + action.payload;
     case "DECREMENT":
       return state - 1;
@@ -58,13 +58,13 @@ export const allReducers = combineReducers({
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // middleware
-const logger = (store) => (next) => (action) => {
-  console.log("logger middleware", action);
+const auth = (store) => (next) => (action) => {
+  console.log("auth middleware", action);
   console.log("current state", store.getState());
   return next(action);
 };
 
 export const myStore = createStore(
   allReducers,
-  composeEnhancer(applyMiddleware(logger))
+  composeEnhancer(applyMiddleware(auth))
 );

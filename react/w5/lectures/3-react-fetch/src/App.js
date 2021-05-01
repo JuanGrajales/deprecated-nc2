@@ -5,7 +5,7 @@ class App extends Component {
     posts: [],
   };
 
-  test = () => {
+  getRequest = () => {
     let url = "https://jsonplaceholder.typicode.com/posts";
     fetch(url, {
       method: "GET",
@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <>
         <h1>Fetch</h1>
-        <button onClick={this.test}>Get Request</button>
+        <button onClick={this.getRequest}>Projects</button>
         <ul>{this.displayPosts()}</ul>
       </>
     );
