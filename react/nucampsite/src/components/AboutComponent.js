@@ -8,8 +8,10 @@ import {
   Media,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+// step 1 ADD
 import { baseUrl } from "../shared/baseUrl";
 import { Loading } from "./LoadingComponent";
+// step 1 ADD
 
 function RenderPartner({ partner }) {
   if (partner) {
@@ -18,7 +20,9 @@ function RenderPartner({ partner }) {
       <React.Fragment>
         <Media
           object
+          // step 2 EDIT
           src={baseUrl + partner.image}
+          // step 2 EDIT
           alt={partner.name}
           width="150"
         />
@@ -32,8 +36,9 @@ function RenderPartner({ partner }) {
   return <div></div>; // if the partner data does not exist then don't display anything
 }
 
+// step 3 ADD
 function PartnerList(props) {
-  const partners = props.partners.map((partner) => {
+  const partners = props.partners.partners.map((partner) => {
     return (
       <Media tag="li" key={partner.id}>
         <RenderPartner partner={partner} />
@@ -44,7 +49,6 @@ function PartnerList(props) {
   if (props.partners.isLoading) {
     return <Loading />;
   }
-
   if (props.partners.errMess) {
     return (
       <div className="col">
@@ -52,13 +56,13 @@ function PartnerList(props) {
       </div>
     );
   }
-
   return (
     <div className="col mt-4">
       <Media list>{partners}</Media>
     </div>
   );
 }
+// step 3 ADD
 
 function About(props) {
   return (
@@ -130,7 +134,9 @@ function About(props) {
         <div className="col-12">
           <h3>Community Partners</h3>
         </div>
+        {/* // step 4 EDIT */}
         <PartnerList partners={props.partners} />
+        {/* // step 4 EDIT */}
       </div>
     </div>
   );
