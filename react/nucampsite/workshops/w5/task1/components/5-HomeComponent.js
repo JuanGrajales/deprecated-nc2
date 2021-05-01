@@ -48,7 +48,13 @@ function Home(props) {
           />
         </div>
         <div className="col-md m-1">
-          <RenderCard item={props.partner} />
+          <RenderCard
+            item={props.partner}
+            // step 1 ADD
+            isLoading={props.partnerLoading}
+            errMess={props.partnerErrMess}
+            // step 1 ADD
+          />
         </div>
       </div>
     </div>

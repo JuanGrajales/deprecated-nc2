@@ -9,12 +9,15 @@ import About from "./AboutComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { actions } from "react-redux-form";
+// step 1 EDIT ADD
 import {
   postComment,
   fetchCampsites,
   fetchComments,
   fetchPromotions,
+  fetchPartners,
 } from "../redux/ActionCreators";
+// step 1 EDIT ADD
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const mapStateToProps = (state) => {
@@ -33,6 +36,9 @@ const mapDispatchToProps = {
   resetFeedbackForm: () => actions.reset("feedbackForm"),
   fetchComments: () => fetchComments(),
   fetchPromotions: () => fetchPromotions(),
+  // step 2 ADD
+  fetchPartners: () => fetchPartners(),
+  // step 2 ADD
 };
 
 class Main extends Component {
@@ -40,6 +46,9 @@ class Main extends Component {
     this.props.fetchCampsites();
     this.props.fetchComments();
     this.props.fetchPromotions();
+    // step 3 ADD
+    this.props.fetchPartners();
+    // step 3 ADD
   }
 
   render() {
@@ -60,7 +69,13 @@ class Main extends Component {
           }
           promotionLoading={this.props.promotions.isLoading}
           promotionErrMess={this.props.promotions.errMess}
+          // step 4 EDIT
           partner={this.props.partners.filter((partner) => partner.featured)[0]}
+          // step 4 EDIT
+          // step 5 ADD
+          partnerLoading={this.props.partners.isLoading}
+          partnerErrMess={this.props.partners.errMess}
+          // step 5 ADD
         />
       );
     };
